@@ -1,4 +1,4 @@
-## INSTALLATION for PRODUCTION
+﻿## INSTALLATION for PRODUCTION
 
 - Clone project and cd to project directory
 - Run `cp .env.example .env`
@@ -10,7 +10,6 @@
 - Run `php artisan serve`
 
 ## Lệnh cmd git bash(thực hiện theo thứ tự)
-
 # 1.Khi chưa clone project
 - Clone project: `git clone <link>`
 - Create branch: `git checkout -b <branch>`
