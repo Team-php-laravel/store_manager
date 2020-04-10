@@ -10,10 +10,10 @@
 - Run `php artisan serve`
 
 ## Lệnh cmd git bash(thực hiện theo thứ tự)
-# 1.Khi chưa clone project
+### 1.Khi chưa clone project
 - Clone project: `git clone <link>`
 - Create branch: `git checkout -b <branch>`
-# 2.Khi thực hiện code và commit lên project git
+### 2.Khi thực hiện code và commit lên project git
 - Add folder/file: `git add *`
 - Commit git: `git commit -m "<Comment>"`
 - Clone master: `git pull origin master`
