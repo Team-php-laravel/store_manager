@@ -12,13 +12,13 @@
 ## Lệnh cmd git bash(thực hiện theo thứ tự)
 
 # 1.Khi chưa clone project
-- Clone project: git clone <link>
-- Create branch: git checkout -b <branch>
+- Clone project: `git clone <link>`
+- Create branch: `git checkout -b <branch>`
 # 2.Khi thực hiện code và commit lên project git
-- Add folder/file: git add * 
-- Commit git: git commit -m "<Comment>"
-- Clone master: git pull origin master
-- update branch: git push origin <branch>
+- Add folder/file: `git add *`
+- Commit git: `git commit -m "<Comment>"`
+- Clone master: `git pull origin master`
+- update branch: `git push origin <branch>`
 -> Mỗi lần commit đều thực hiện các lệnh ở mục 2 này 
 
 ### Access
