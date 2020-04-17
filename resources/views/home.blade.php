@@ -896,27 +896,48 @@
             </div>
             <div class="row">
                 <div class="col-12 col-md-8 mx-auto">
-                    <form action="" class="contact__form">
+                    
+                    <form action="{{ route('contact.add')}}" class="contact__form" method="POST">
+                    @include('message')
+                    @csrf
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <input type="text" placeholder="name">
+                                <input type="text" placeholder="name" name="name" require value="{{ old('name') }}">
+                                @if ($errors->has('name'))
+                                    <p class="text-danger">{{ $errors->first('name') }}</p>
+                                @endif
                             </div>
                             <div class="col-12 col-md-6">
-                                <input type="text" placeholder="email">
+                                <input type="text" placeholder="email" require name="email" value="{{ old('email') }}">
+                                @if ($errors->has('email'))
+                                    <p class="text-danger">{{ $errors->first('email') }}</p>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <input type="text" placeholder="number" name="number" require value="{{ old('number') }}">
+                                @if ($errors->has('number'))
+                                    <p class="text-danger">{{ $errors->first('number') }}</p>
+                                @endif
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <input type="text" placeholder="subject" name="subject" require value="{{ old('subject') }}">
+                                @if ($errors->has('subject'))
+                                    <p class="text-danger">{{ $errors->first('subject') }}</p>
+                                @endif
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <input type="text" placeholder="subject">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <textarea name="" id="" cols="30" rows="3" placeholder="Your Message"></textarea>
+                                <textarea name="message" require id="" cols="30" rows="3" placeholder="Your Message"></textarea>
+                                @if ($errors->has('message'))
+                                    <p class="text-danger">{{ $errors->first('message') }}</p>
+                                @endif
                             </div>
                         </div>
                         <div class="form__submit text-center">
-                            <button class="button button-green">Send Submit</button>
+                            <button class="button button-green" type="submit">Send Submit</button>
                         </div>
                     </form>
                 </div>

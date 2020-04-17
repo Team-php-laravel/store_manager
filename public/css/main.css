@@ -931,7 +931,9 @@ a {
   border-radius: 5px;
   background: var(--white-color);
 }
-
+.contact__form p{
+  font-size: 16px;
+}
 input,
 textarea {
   width: 100%;

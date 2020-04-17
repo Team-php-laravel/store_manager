@@ -279,7 +279,17 @@ return [
         [
             'text'    => 'Quản lý phản hồi',
             'icon'    => 'far fa-paper-plane',
-            'url'     => '',
+            'url'     => 'admin/contact/list',
+        ],
+        [
+            'text'    => 'Quản lý người dùng',
+            'icon'    => 'fas fa-user',
+            'url'     => 'admin/user/list',
+        ],
+        [
+            'text'    => 'Quản lý tin tức',
+            'icon'    => 'fas fa-newspaper',
+            'url'     => 'admin/news/list',
         ],
     ],
 
