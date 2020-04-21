@@ -19,18 +19,47 @@
         <div id="nav-wrap">
             <div class="inn-nav clearfix">
                 <ul class="nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li>
-                        <a href="#">News</a>
+                    <li class="active"><a href="index.php">Trang Chủ</a></li>
+                    <!-- <li>
+                        <a href="#">Sliders</a>
+                        <ul>
+                            <li><a href="basic-slider.html">Basic Slider</a></li>
+                            <li><a href="index-2.html">Right Info Slider</a></li>
+                            <li><a href="nivo-slider.html">Nivo Slider</a></li>
+                            <li><a href="accordion-slider.html">Accordion Slider</a></li>
+                            <li><a href="thumb-slider.html">Thumbnail Slider</a></li>
+                        </ul>
                     </li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
+                    <li><a href="recipes.html">Recent Recipes</a></li>
+                    <li>
+                        <a href="single-sb.html">Recipe Detail</a>
+                        <ul>
+                            <li><a href="single-sb.html">Variation One</a></li>
+                            <li><a href="single-full.html">Variation Two</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="services.html">Services</a></li> -->
+                    <li><a href="news">Tin Tức</a></li>
+                    <!-- <li><a href="single.html">Single Post</a></li>
+                    <li>
+                        <a href="features.html">Features</a>
+                        <ul>
+                            <li><a href="page.html">Full Width</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="features.html">Additional Features</a></li>
+                        </ul>
+                    </li> -->
+                    <li><a href="contact">Liên Hệ</a></li>
+                </ul><!-- end of nav ul -->
+                <!-- MAIN NAVIGATION ENDS HERE -->
+
+                <!-- SOCIAL NAVIGATION -->
                 <ul class="social-nav">
                     <li class="twitter"><a href="#"></a></li>
                     <li class="facebook"><a href="#"></a></li>
                     <li class="flickr"><a href="#"></a></li>
                     <li class="rss"><a href="#"></a></li>
-                </ul>
+                </ul><!-- end of social-nav ul -->
             </div>
         </div>
         <span class="w-pet-border"></span>
@@ -110,7 +139,6 @@
         <script type="text/javascript" src="js/script.js"></script>
 
 </body>
-
 <!-- Mirrored from inspirythemes.com/templates/foodrecipes-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Jun 2015 13:03:07 GMT -->
 
 </html>

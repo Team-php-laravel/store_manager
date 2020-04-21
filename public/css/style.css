@@ -2716,3 +2716,29 @@ html[data-useragent*="MSIE 10.0"] #slider .slides .sliderNav span a {
         display: none;
     }
 }
+
+/* KingNNT Code Here */
+
+.book {
+    margin: 0px;
+    padding: 0px;
+}
+.book div {
+    margin: 20px;
+}
+
+.book #infomation-book {
+    margin: 20px;
+}
+
+.book #title-book > h2 {
+    background-color: #c0392b;
+    border: 1px solid #c0392b;
+    box-shadow: -5px -5px 21px #666;
+    text-align: center;
+    color: white;
+
+    padding: 10px 10px 10px 10px;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}

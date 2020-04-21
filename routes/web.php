@@ -7,6 +7,18 @@ Route::group(['name'=>'page'], function(){
     Route::get('/', function () {
         return view('home');
     });
+
+    Route::get('/book', function() {
+        return view('book');
+    });
+
+    Route::get('/news', function () {
+        return view('news');
+    });
+
+    Route::get('/contact', function () {
+        return view('contact');
+    });
     /*
     |--------------------------------------------------------------------------
     | Page Routes
