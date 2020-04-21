@@ -1,0 +1,116 @@
+@extends('templates.app')
+
+@section('title', 'Contact')
+@section('content')
+            <div id="content" class="clearfix">
+                <div id="left-area" class="clearfix">
+                    <h2 class="title">Contact Us</h2>
+                    <p>
+                        If food is an experience for you, then you will find it
+                        at the Food Recipe
+                    </p>
+                    <div class="single-img-box">
+                        <div id="map_canvas"></div>
+                    </div>
+                    <h3>Quick Contact</h3>
+                    <span class="w-pet-border"></span>
+                    <form
+                        action="http://inspirythemes.com/templates/foodrecipes-html/contact.php"
+                        method="post"
+                        id="contact-form"
+                    >
+                        <p>
+                            <input
+                                type="text"
+                                name="name"
+                                class="required"
+                                id="cname"
+                                value="Name here"
+                            />
+                        </p>
+                        <p>
+                            <input
+                                type="text"
+                                name="email"
+                                class="email required"
+                                id="cemail"
+                                value="Email here"
+                            />
+                        </p>
+                        <p>
+                            <textarea
+                                name="message"
+                                id="cmessage"
+                                class="required"
+                                cols="30"
+                                rows="6"
+                            >Message</textarea>
+                        </p>
+                        <p>
+                            <input
+                                type="submit"
+                                name="contact-submit"
+                                id="contact-submit"
+                                value="Send Now"
+                                class="readmore"
+                            />
+                            <img
+                                src="images/loading.gif"
+                                id="contact-loader"
+                                alt="Loader"
+                            />
+                        </p>
+                        <p id="message-sent">
+                            Thanks for Your Message! <br />
+                            We will get in touch shortly.
+                        </p>
+                        <p>
+                            <span class="w-pet-border"></span>
+                        </p>
+                    </form>
+                </div>
+                <!-- end of left-area -->
+
+                <div id="sidebar">
+                    <div class="widget">
+                        <h4 class="blue">Address</h4>
+                        <ul>
+                            <li>
+                                If food is an experience for you, then you will
+                                find it at the Food Recipe
+                            </li>
+                            <li>
+                                Recipe north street, opp secure garden. Jalaal
+                                Pur Jattaan 364001
+                            </li>
+                            <li>
+                                <span class="phone">236-456-1226</span>
+                                <span class="email">info@recipes.com</span>
+                                <span class="note">236-456-321</span>
+                            </li>
+                        </ul>
+                        <div class="widget-bot-round"></div>
+                    </div>
+
+                    <div class="widget">
+                        <h4 class="blue">Sales Inquiries</h4>
+                        <ul>
+                            <li>
+                                If food is an experience for you, then you will
+                                find it at the Food Recipe
+                            </li>
+                            <li>
+                                <span class="phone">236-456-1226</span>
+                                <span class="email">info@recipes.com</span>
+                                <span class="note">236-456-321</span>
+                            </li>
+                        </ul>
+                        <div class="widget-bot-round"></div>
+                    </div>
+                </div>
+                <!-- end of sidebar -->
+            </div>
+            <!-- end of content div -->
+            <!-- ========== CONTENT AREA ENDS HERE ========== -->
+        <div class="w-pet-border"></div>
+@endsection

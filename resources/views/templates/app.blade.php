@@ -71,6 +71,16 @@
 
 
     <div id="container">
+        <div class="top-search clearfix">
+            <h3 class="head-pet"><span>Tìm Kiếm</span></h3>
+            <form action="#" id="searchform" method="post">
+                <p>
+                    <input type="text" name="2" id="s" class="field" value="Search for" />
+                    <input type="submit" name="s_submit" id="s-submit" value="🔎" />
+                </p>
+            </form>
+                    <p class="statement"><span class="fireRed">Popular searches :</span> <a href="#">meatloaf recipes</a>, <a href="#">banana cake recipes</a>, <a href="#">cheesecake recipes</a>, <a href="#">carbonara recipes</a></p>
+        </div>
         <!-- ============= CONTAINER AREA ENDS HERE ============== -->
         @yield('content')
         <!-- ============= BOTTOM AREA STARTS HERE ============== -->
