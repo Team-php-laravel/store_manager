@@ -69,8 +69,6 @@
                         </p>
                     </form>
                 </div>
-                <!-- end of left-area -->
-
                 <div id="sidebar">
                     <div class="widget">
                         <h4 class="blue">Address</h4>
@@ -108,9 +106,6 @@
                         <div class="widget-bot-round"></div>
                     </div>
                 </div>
-                <!-- end of sidebar -->
             </div>
-            <!-- end of content div -->
-            <!-- ========== CONTENT AREA ENDS HERE ========== -->
         <div class="w-pet-border"></div>
 @endsection

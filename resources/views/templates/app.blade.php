@@ -14,12 +14,12 @@
 <body>
     <div id="header-wrapper">
         <div id="header">
-            <a href="index.html"><img src="../public/images/logo.png" alt="Food Recipes" class="logo" /></a>
+            <a href="index.php"><img src="../public/images/logo.png" alt="Food Recipes" class="logo" /></a>
         </div>
         <div id="nav-wrap">
             <div class="inn-nav clearfix">
                 <ul class="nav">
-                    <li class="active"><a href="index.php">Trang Chủ</a></li>
+                    <li><a href="index.php">Trang Chủ</a></li>
                     <!-- <li>
                         <a href="#">Sliders</a>
                         <ul>
@@ -125,8 +125,8 @@
 
         <div id="footer-wrap">
             <div id="footer">
-                <p class="copyright">Copyright © 2014, Food Recipes - A Premium HTML Template</p>
-                <p class="dnd">Developed by <a href="http://inspirythemes.com/">inspirythemes</a></p>
+                <p class="copyright">Copyright © 2020</p>
+                <p class="dnd">Developed by <a href="#">Team Laravel</a></p>
             </div><!-- end of footer div -->
         </div><!-- end of footer-wrapper div -->
 
