@@ -11,7 +11,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.htmlEncodeOutput = false;
     config.entities_latin = false;
 	config.ForceSimpleAmpersand = true;
-	config.filebrowserBrowseUrl = '/ckfinder/ckfinder.html';
-	config.filebrowserUploadUrl ='/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
+	config.filebrowserBrowseUrl = 'http://127.0.0.1:8000/ckfinder/ckfinder.html'; 
+	config.filebrowserUploadUrl ='http://127.0.0.1:8000/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
 
 };
