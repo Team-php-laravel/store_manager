@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -26,38 +28,132 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        return view('admin.user.profile', ["user" => $user]);
+        $user = User::all();
+        return view('admin.user.index', compact('user'));
     }
 
-    public function update(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
+        return view('admin.user.create');
+    }
 
-        $validatedData = $request->validate(
-            [
-                'name' => 'required|max:255',
-                'phone' => 'required',
-                'ngay_sinh' => 'required',
-                'dia_chi' => 'required',
-            ],
-            [
-                'name.required' => 'Vui lòng cập nhật họ tên',
-                'phone.required' => 'Vui lòng cập nhật số điện thoại',
-                'ngay_sinh.required' => 'Vui lòng cập nhật ngày sinh',
-                'dia_chi.required' => 'Vui lòng cập nhật đỉa chị',
-            ]
-        );
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        if ($request->hasFile('avatar')) {
+            $image = Str::random() . '.' . $request->avatar->getClientOriginalExtension();
+            $request->avatar->move("uploads/user/", $image);
+        }
 
-        $user = Auth::user();
-        $user->name = $request->name;
-        $user->phone = $request->phone;
-        $user->ngay_sinh = date('y/m/d',strtotime($request->ngay_sinh));
-        $user->dia_chi = $request->dia_chi;
-        $user->ki_nang = $request->ki_nang;
-        $user->ghi_chu = $request->ghi_chu;
-        $user->cham_ngon = $request->cham_ngon;
-        $user->save();
+        $data = collect($request->all())->merge([
+            'avatar' => $request->hasFile('avatar') ? $image : null,
+            'password' => '123456',
+        ])->toArray();
 
-        return back()->with('message', 'Cập nhật hồ sơ thành công');
+
+        User::create($data);
+
+        return redirect('admin/user')->with("message", "Thêm nhân viên thành công !");
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+        $user = User::findOrFail($id);
+        return view('admin.user.update', compact('user'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $id = Auth::user()->id;
+        return view('admin.user.password', compact('id'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+        $user = User::findOrFail($id);
+        if (isset($request->password_config)) {
+            if ($request->password_config == $request->password) {
+                $data = collect($request->all())->merge([
+                    'password' => Hash::make($request->password)
+                ])->toArray();
+                unset($data['password_config']);
+                User::findOrFail($id)->update($data);
+                return redirect('/admin/user/0/edit')->with("message", "Cập nhật thành công!");
+            } else {
+                return redirect('/admin/user/0/edit')->with(["error" => "Mật khẩu không trùng khớp!"]);
+            }
+        } elseif (isset($request->trang_thai)) {
+            $data = collect($request->all())->merge([
+                'trang_thai' => $request->trang_thai,
+                'password' => $request->trang_thai == 1 ? Hash::make('123456') : '123456'
+            ])->toArray();
+            $user->update($data);
+            return redirect('admin/user')->with("message", "Đổi trạng thái thành công !");
+        } elseif ($request->hasFile('avatar')) {
+            $image = Str::random() . '.' . $request->avatar->getClientOriginalExtension();
+            $request->avatar->move("uploads/user/", $image);
+            $data = collect($request->all())->merge([
+                'avatar' => $request->hasFile('avatar') ? $image : null,
+                'vi_tri_id' => $user->vi_tri_id == 0 ? 0 : $request->vi_tri_id
+            ])->toArray();
+        } else {
+            $data = collect($request->all())->merge([
+                'avatar' => $user->avatar,
+                'vi_tri_id' => $user->vi_tri_id == 0 ? 0 : $request->vi_tri_id
+            ])->toArray();
+        }
+
+        $user->update($data);
+
+        return redirect('admin/user')->with("message", "Cập nhật nhân viên thành công !");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $user = User::with('post')->findOrFail($id);
+        if (sizeof($user->post) == 0) {
+            User::findOrFail($id)->delete();
+            return redirect('admin/user')->with("message", "Xóa nhân viên thành công !");
+        } else {
+            return redirect('admin/user')->with("error", "Thất bại, nhân viên này là chủ sở hữu của 1 só bài viết!");
+        }
     }
 }

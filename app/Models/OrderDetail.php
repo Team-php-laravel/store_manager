@@ -8,4 +8,8 @@ class OrderDetail extends Model
 {
     protected $table = "chi_tiet_hoa_don";
     protected $fillable = ["so_luong","don_gia","thanh_tien","hoa_don_id","mat_hang_id"];
+
+    public function store(){
+        return $this->belongsTo('App\Models\Store','mat_hang_id','id');
+    }
 }

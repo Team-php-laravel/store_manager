@@ -15,11 +15,12 @@ class CreatePostsTable extends Migration
     {
         Schema::create('bai_viet', function (Blueprint $table) {
             $table->id();
-            $table->string('tieu_de',255);
-            $table->string('hinh_anh',255);
-            $table->string('mo_ta',255);
+            $table->string('tieu_de', 255);
+            $table->string('hinh_anh', 255);
+            $table->string('mo_ta', 255);
             $table->text('noi_dung');
             $table->unsignedBigInteger('user_id');
+            $table->boolean('trang_thai')->default(1);
             $table->timestamps();
         });
 

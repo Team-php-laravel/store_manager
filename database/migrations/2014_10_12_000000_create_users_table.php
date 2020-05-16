@@ -18,15 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('avatar')->nullable();
             $table->string('email')->unique();
-            $table->string('phone')->nullalbe();
+            $table->string('dien_thoai')->nullable();
+            $table->string('dia_chi')->nullable();
             $table->dateTime('ngay_sinh')->nullable();
-            $table->string('cham_ngon')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->unsignedTinyInteger('vi_tri_id');
-            $table->string('dia_chi')->nullable();
-            $table->string('ki_nang')->nullable();
-            $table->string('ghi_chu')->nullable();
+            $table->boolean('trang_thai')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });

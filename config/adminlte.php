@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => '',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<i style="color: #c0392b" class="fas fa-cart-arrow-down"></i>The <b>Store</b>',
+    'logo_img' => false,
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -167,17 +167,17 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'admin/dashboard',
+    'dashboard_url' => 'admin',
 
     'logout_url' => 'logout',
 
     'login_url' => 'login',
 
-    'register_url' => 'register',
+    'register_url' => false,
 
-    'password_reset_url' => 'password/reset',
+    'password_reset_url' => false,
 
-    'password_email_url' => 'password/email',
+    'password_email_url' => false,
 
     'profile_url' => false,
 
@@ -215,72 +215,69 @@ return [
         ],
         [
             'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'url' => 'admin/blog',
+            'can' => 'manage-blog',
         ],
         [
-            'text'        => 'Dashboard',
-            'url'         => 'admin/dashboard',
-            'icon'        => 'fas fa-home',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Dashboard',
+            'url' => 'admin',
+            'icon' => 'fas fa-home'
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Tài khoản'],
         [
-            'text' => 'Hồ sơ',
-            'url'  => 'admin/profile',
-            'icon' => 'fas fa-address-card',
+            'text' => 'Đổi mật khẩu',
+            'url' => 'admin/user/0/edit',
+            'icon' => 'fas fa-user',
         ],
 
-        ['header' => 'MANAGEMENT'],
+        ['header' => 'Quản lý'],
         [
-            'text'    => 'Quản lý bàn ăn',
-            'icon'    => 'fas fa-laptop-house',
-            'url'  => 'admin/table/1/storey'
-        ],
-
-        [
-            'text'    => 'Quản lý nhân viên',
-            'icon'    => 'fas fa-id-card-alt',
-            'submenu' => [
-                [
-                    'text' => 'Danh sách nhân viên',
-                    'url'  => 'admin/user',
-                    'icon' => 'fas fa-paste',
-                ],
-                [
-                    'text'    => 'Thêm tài khoản  ',
-                    'url'     => 'admin/user/setting',
-                    'icon' => 'fas fa-paste',
-                ],
-            ],
+            'text' => 'Quản lý bàn ăn',
+            'icon' => 'fas fa-table',
+            'url' => 'admin/tang'
         ],
         [
-            'text'    => 'Thống kê doanh thu',
-            'icon'    => 'fas fa-money-check-alt',
+            'text' => 'Quản lý thức ăn & đồ uống',
+            'icon' => 'fa fa-shopping-cart',
+            'url' => 'admin/product',
+        ],
+        [
+            'text' => 'Thống kê doanh thu',
+            'icon' => 'fas fa-money-check-alt',
             'submenu' => [
                 [
                     'text' => 'Danh sách đơn hàng',
-                    'url'  => '#',
+                    'url' => 'admin/order',
                     'icon' => 'fas fa-paste',
                 ],
                 [
-                    'text'    => 'Doanh thu',
-                    'url'     => '#',
+                    'text' => 'Doanh thu',
+                    'url' => 'admin/thong_ke',
                     'icon' => 'fas fa-paste',
                 ],
             ],
         ],
         [
-            'text'    => 'Quản lý tin tức',
-            'icon'    => 'far fa-newspaper',
-            'url'     => '',
+            'text' => 'Quản lý nhân viên',
+            'icon' => 'fas fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Danh sách nhân viên',
+                    'url' => 'admin/user',
+                    'icon' => 'fas fa-paste',
+                ],
+                [
+                    'text' => 'Thêm tài khoản  ',
+                    'url' => 'admin/user/create',
+                    'icon' => 'fas fa-paste',
+                ],
+            ],
         ],
         [
-            'text'    => 'Quản lý phản hồi',
-            'icon'    => 'far fa-paper-plane',
-            'url'     => '',
-        ],
+            'text' => 'Quản lý tin tức',
+            'icon' => 'far fa-paper-plane',
+            'url' => 'admin/news',
+        ]
     ],
 
     /*

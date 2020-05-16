@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'dia_chi','ngay_sinh', 'cham_ngon','ki_nang', 'ghi_chu', 'vi_tri_id',
+        'name', 'email','avatar', 'password', 'dien_thoai', 'dia_chi', 'ngay_sinh', 'cham_ngon', 'ki_nang', 'ghi_chu', 'vi_tri_id', 'trang_thai'
     ];
 
     /**
@@ -37,9 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
-    public function position()
+    public function post()
     {
-        return $this->belongsTo('App\Models\Position','vi_tri_id');
+        return $this->hasMany('App\Models\Post', 'user_id', 'id');
     }
 }
