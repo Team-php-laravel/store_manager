@@ -182,11 +182,8 @@
                                     success: function (response) {
                                         if (response == 1) {
                                             alert('Thanh toán thành công!');
-                                            window.history.back();
-                                            setTimeout('location.reload();', 1000);
                                         } else {
                                             alert('Thanh toán thất bại!');
-                                            location.reload();
                                         }
                                     }
                                 });

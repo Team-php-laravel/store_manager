@@ -59,6 +59,7 @@ class UserController extends Controller
         $data = collect($request->all())->merge([
             'avatar' => $request->hasFile('avatar') ? $image : null,
             'password' => '123456',
+            'trang_thai' => 0
         ])->toArray();
 
 

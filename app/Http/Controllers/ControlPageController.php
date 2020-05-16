@@ -13,7 +13,7 @@ class ControlPageController extends Controller
     public function home()
     {
         $store = Store::all();
-        $news = Post::with('user')->limit(3)->get();
+        $news = Post::with('user')->where('trang_thai', 1)->limit(3)->get();
         $tang = Storey::all();
         return view('home', compact('store', 'news', 'tang'));
     }
@@ -33,14 +33,14 @@ class ControlPageController extends Controller
     public function news()
     {
         $tang = Storey::all();
-        $news = Post::with('user')->get();
+        $news = Post::with('user')->where('trang_thai', 1)->get();
         return view('new', compact('news', 'tang'));
     }
 
     public function detail($id)
     {
         $post = Post::with('user')->find($id);
-        $news = Post::with('user')->limit(3)->get();
+        $news = Post::with('user')->where('trang_thai', 1)->limit(3)->get();
         return view('detail', compact('news', 'post'));
     }
 }
