@@ -274,10 +274,32 @@ return [
             ],
         ],
         [
+<<<<<<< HEAD
             'text' => 'Quản lý tin tức',
             'icon' => 'far fa-paper-plane',
             'url' => 'admin/news',
         ]
+=======
+            'text'    => 'Quản lý tin tức',
+            'icon'    => 'far fa-newspaper',
+            'url'     => '',
+        ],
+        [
+            'text'    => 'Quản lý phản hồi',
+            'icon'    => 'far fa-paper-plane',
+            'url'     => 'admin/contact/list',
+        ],
+        [
+            'text'    => 'Quản lý người dùng',
+            'icon'    => 'fas fa-user',
+            'url'     => 'admin/user/list',
+        ],
+        [
+            'text'    => 'Quản lý tin tức',
+            'icon'    => 'fas fa-newspaper',
+            'url'     => 'admin/news/list',
+        ],
+>>>>>>> 64cd1a3a06b679df1ad1d7de024df3b2350ea83e
     ],
 
     /*

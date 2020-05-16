@@ -5,7 +5,16 @@
 @yield('app')
 
 @section('css')
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/admin_custom.css">
+=======
+<link rel="stylesheet" href="/css/admin_custom.css">
+<base href="{{asset('')}}}">
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+>>>>>>> 64cd1a3a06b679df1ad1d7de024df3b2350ea83e
 @stop
 
 @section('js')
